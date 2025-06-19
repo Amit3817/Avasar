@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const AdminUsers = () => {
   const users = [
     { id: 1, name: 'John Doe', email: 'john@example.com', role: 'user', status: 'active', joinDate: '2024-01-15', sponsorId: 'SP001' },
@@ -6,6 +9,14 @@ const AdminUsers = () => {
     { id: 4, name: 'Sarah Wilson', email: 'sarah@example.com', role: 'user', status: 'active', joinDate: '2024-02-01', sponsorId: 'SP003' },
     { id: 5, name: 'David Brown', email: 'david@example.com', role: 'user', status: 'pending', joinDate: '2024-02-05', sponsorId: 'SP004' }
   ];
+
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [showViewModal, setShowViewModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [userList, setUserList] = useState(users);
+  const navigate = useNavigate();
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -23,6 +34,38 @@ const AdminUsers = () => {
       case 'pending': return '⏳';
       default: return '❓';
     }
+  };
+
+  const handleView = (user) => {
+    setSelectedUser(user);
+    setShowViewModal(true);
+  };
+
+  const handleEdit = (user) => {
+    setSelectedUser(user);
+    setShowEditModal(true);
+  };
+
+  const handleDelete = (user) => {
+    setSelectedUser(user);
+    setShowDeleteModal(true);
+  };
+
+  const confirmDelete = () => {
+    setUserList(userList.filter(u => u.id !== selectedUser.id));
+    setShowDeleteModal(false);
+  };
+
+  const handleAdd = () => {
+    setShowAddModal(true);
+  };
+
+  const handleExport = () => {
+    alert('Exporting user data (simulated)');
+  };
+
+  const handleAnalytics = () => {
+    navigate('/admin/analytics');
   };
 
   return (
@@ -175,13 +218,13 @@ const AdminUsers = () => {
                     </td>
                     <td className="px-8 py-6">
                       <div className="flex items-center space-x-2">
-                        <button className="p-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <button className="p-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onClick={() => handleView(user)}>
                           👁️
                         </button>
-                        <button className="p-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <button className="p-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onClick={() => handleEdit(user)}>
                           ✏️
                         </button>
-                        <button className="p-2 bg-gradient-to-r from-red-500 to-rose-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <button className="p-2 bg-gradient-to-r from-red-500 to-rose-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onClick={() => handleDelete(user)}>
                           🗑️
                         </button>
                       </div>
@@ -196,7 +239,7 @@ const AdminUsers = () => {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={handleAdd}>
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -207,7 +250,7 @@ const AdminUsers = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={handleAnalytics}>
           <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -218,7 +261,7 @@ const AdminUsers = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={handleExport}>
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -229,6 +272,12 @@ const AdminUsers = () => {
           </div>
         </div>
       </div>
+
+      {/* Modals for view, edit, add, delete confirmation (simple implementation) */}
+      {showViewModal && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"><div className="bg-white p-8 rounded-2xl shadow-xl"><h2 className="font-bold mb-4">User Details</h2><pre>{JSON.stringify(selectedUser, null, 2)}</pre><button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={()=>setShowViewModal(false)}>Close</button></div></div>}
+      {showEditModal && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"><div className="bg-white p-8 rounded-2xl shadow-xl"><h2 className="font-bold mb-4">Edit User (simulated)</h2><pre>{JSON.stringify(selectedUser, null, 2)}</pre><button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={()=>setShowEditModal(false)}>Close</button></div></div>}
+      {showAddModal && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"><div className="bg-white p-8 rounded-2xl shadow-xl"><h2 className="font-bold mb-4">Add User (simulated)</h2><button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={()=>setShowAddModal(false)}>Close</button></div></div>}
+      {showDeleteModal && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"><div className="bg-white p-8 rounded-2xl shadow-xl"><h2 className="font-bold mb-4">Delete User?</h2><p>Are you sure you want to delete {selectedUser?.name}?</p><div className="mt-4 flex gap-2"><button className="px-4 py-2 bg-red-500 text-white rounded" onClick={confirmDelete}>Delete</button><button className="px-4 py-2 bg-gray-300 rounded" onClick={()=>setShowDeleteModal(false)}>Cancel</button></div></div></div>}
     </div>
   );
 };

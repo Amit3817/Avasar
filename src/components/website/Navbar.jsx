@@ -63,33 +63,39 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex-1 overflow-y-auto px-6 py-6 space-y-2 bg-yellow-50/30">
-              {/* Navigation Links */}
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`group flex items-center px-4 py-3 rounded-2xl text-base font-bold transition-all duration-300 ${
-                    location.pathname === link.path
-                      ? 'bg-gradient-to-r from-primary-500 to-blue-500 text-white shadow-lg'
-                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100/80'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  <span className="relative z-10">{link.name}</span>
-                </Link>
-              ))}
-              <div className="border-t border-gray-200/60 my-4"></div>
-              {/* Auth Buttons */}
-              {user ? (
-                <>
+            <div className="flex-1 flex flex-col justify-between overflow-y-auto px-6 py-6 space-y-2 bg-yellow-50/30">
+              <div>
+                {/* Navigation Links */}
+                {navLinks.map((link) => (
                   <Link
-                    to="/user/dashboard"
-                    className="text-sm font-bold text-white bg-gradient-to-r from-primary-500 to-blue-500 px-4 py-2 rounded-2xl shadow-md hover:scale-105 transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400 block mb-2"
+                    key={link.name}
+                    to={link.path}
+                    className={`group flex items-center px-4 py-3 rounded-2xl text-base font-bold transition-all duration-300 w-full ${
+                      location.pathname === link.path
+                        ? 'bg-gradient-to-r from-primary-500 to-blue-500 text-white shadow-lg'
+                        : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100/80'
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
-                    Welcome, {user.firstName}
+                    <span className="relative z-10">{link.name}</span>
                   </Link>
+                ))}
+                <div className="border-t border-gray-200/60 my-4"></div>
+                {/* Welcome user button styled like nav links */}
+                {user && (
+                  <Link
+                    to="/user/dashboard"
+                    className="group flex items-center px-4 py-3 rounded-2xl text-base font-bold transition-all duration-300 w-full bg-gradient-to-r from-primary-500 to-blue-500 text-white shadow-lg mt-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span className="relative z-10 mr-4 text-xl">👋</span>
+                    <span className="relative z-10">Welcome, {user.firstName}</span>
+                  </Link>
+                )}
+              </div>
+              {/* Logout Button at bottom */}
+              {user && (
+                <div className="pb-2">
                   <button
                     onClick={() => {
                       handleLogout();
@@ -102,30 +108,7 @@ const Navbar = () => {
                       Logout
                     </span>
                   </button>
-                </>
-              ) : (
-                <>
-                  <Link
-                    to="/login"
-                    className="group relative overflow-hidden block px-4 py-3 rounded-2xl text-base font-bold text-gray-700 hover:text-primary-600 hover:bg-gray-100/80 transition-all duration-300 mb-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="flex items-center">
-                      <span className="mr-2">🔑</span>
-                      Login
-                    </span>
-                  </Link>
-                  <Link
-                    to="/register"
-                    className="group relative overflow-hidden block px-4 py-3 rounded-2xl text-base font-bold bg-gradient-to-r from-primary-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="flex items-center">
-                      <span className="mr-2">✨</span>
-                      Register
-                    </span>
-                  </Link>
-                </>
+                </div>
               )}
             </div>
           </div>

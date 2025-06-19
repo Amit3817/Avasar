@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 const AdminDashboard = () => {
   const stats = [
     { title: 'Total Users', value: '1,234', change: '+12%', icon: '👥', gradient: 'from-blue-500 to-indigo-500' },
@@ -12,6 +14,8 @@ const AdminDashboard = () => {
     { user: 'Mike Johnson', action: 'Contacted Support', time: '10 minutes ago', type: 'warning' },
     { user: 'Sarah Wilson', action: 'Completed Investment', time: '15 minutes ago', type: 'success' }
   ];
+
+  const navigate = useNavigate();
 
   return (
     <div className="space-y-8">
@@ -120,7 +124,7 @@ const AdminDashboard = () => {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={()=>navigate('/admin/users')}>
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -131,7 +135,7 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={()=>navigate('/admin/contacts')}>
           <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -142,7 +146,7 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={()=>navigate('/admin/analytics')}>
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -153,7 +157,7 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={()=>navigate('/admin/settings')}>
           <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-orange-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">

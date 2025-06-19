@@ -1,4 +1,6 @@
 import axios from 'axios';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
 const AdminContacts = () => {
@@ -9,6 +11,14 @@ const AdminContacts = () => {
     { id: 4, name: 'Sarah Wilson', email: 'sarah@example.com', phone: '+91 98765 43213', subject: 'General Question', message: 'What are the minimum investment requirements?', status: 'new', date: '2024-02-12 04:20 PM' },
     { id: 5, name: 'David Brown', email: 'david@example.com', phone: '+91 98765 43214', subject: 'Technical Issue', message: 'I am experiencing issues with the platform login.', status: 'in-progress', date: '2024-02-11 11:30 AM' }
   ];
+
+  const [selectedContact, setSelectedContact] = useState(null);
+  const [showViewModal, setShowViewModal] = useState(false);
+  const [showReplyModal, setShowReplyModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [contactList, setContactList] = useState(contacts);
+  const navigate = useNavigate();
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -26,6 +36,36 @@ const AdminContacts = () => {
       case 'completed': return '✅';
       default: return '❓';
     }
+  };
+
+  const handleView = (contact) => {
+    setSelectedContact(contact);
+    setShowViewModal(true);
+  };
+  const handleReply = (contact) => {
+    setSelectedContact(contact);
+    setShowReplyModal(true);
+  };
+  const handleEdit = (contact) => {
+    setSelectedContact(contact);
+    setShowEditModal(true);
+  };
+  const handleDelete = (contact) => {
+    setSelectedContact(contact);
+    setShowDeleteModal(true);
+  };
+  const confirmDelete = () => {
+    setContactList(contactList.filter(c => c.id !== selectedContact.id));
+    setShowDeleteModal(false);
+  };
+  const handleSendResponse = () => {
+    setShowReplyModal(true);
+  };
+  const handleExport = () => {
+    alert('Exporting contact data (simulated)');
+  };
+  const handleAnalytics = () => {
+    navigate('/admin/analytics');
   };
 
   return (
@@ -174,16 +214,16 @@ const AdminContacts = () => {
                     <td className="px-8 py-6 text-gray-600">{contact.date}</td>
                     <td className="px-8 py-6">
                       <div className="flex items-center space-x-2">
-                        <button className="p-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <button className="p-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onClick={() => handleView(contact)}>
                           👁️
                         </button>
-                        <button className="p-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <button className="p-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onClick={() => handleReply(contact)}>
                           ✉️
                         </button>
-                        <button className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <button className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onClick={() => handleEdit(contact)}>
                           ✏️
                         </button>
-                        <button className="p-2 bg-gradient-to-r from-red-500 to-rose-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <button className="p-2 bg-gradient-to-r from-red-500 to-rose-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onClick={() => handleDelete(contact)}>
                           🗑️
                         </button>
                       </div>
@@ -198,7 +238,7 @@ const AdminContacts = () => {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={handleSendResponse}>
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -209,7 +249,7 @@ const AdminContacts = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={handleAnalytics}>
           <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -220,7 +260,7 @@ const AdminContacts = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50 cursor-pointer" onClick={handleExport}>
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5"></div>
           <div className="relative p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -231,6 +271,12 @@ const AdminContacts = () => {
           </div>
         </div>
       </div>
+
+      {/* Modals for view, reply, edit, delete confirmation (simple implementation) */}
+      {showViewModal && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"><div className="bg-white p-8 rounded-2xl shadow-xl"><h2 className="font-bold mb-4">Contact Details</h2><pre>{JSON.stringify(selectedContact, null, 2)}</pre><button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={()=>setShowViewModal(false)}>Close</button></div></div>}
+      {showReplyModal && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"><div className="bg-white p-8 rounded-2xl shadow-xl"><h2 className="font-bold mb-4">Reply (simulated)</h2><pre>{JSON.stringify(selectedContact, null, 2)}</pre><button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={()=>setShowReplyModal(false)}>Close</button></div></div>}
+      {showEditModal && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"><div className="bg-white p-8 rounded-2xl shadow-xl"><h2 className="font-bold mb-4">Edit Contact (simulated)</h2><pre>{JSON.stringify(selectedContact, null, 2)}</pre><button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={()=>setShowEditModal(false)}>Close</button></div></div>}
+      {showDeleteModal && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"><div className="bg-white p-8 rounded-2xl shadow-xl"><h2 className="font-bold mb-4">Delete Contact?</h2><p>Are you sure you want to delete {selectedContact?.name}?</p><div className="mt-4 flex gap-2"><button className="px-4 py-2 bg-red-500 text-white rounded" onClick={confirmDelete}>Delete</button><button className="px-4 py-2 bg-gray-300 rounded" onClick={()=>setShowDeleteModal(false)}>Cancel</button></div></div></div>}
     </div>
   );
 };

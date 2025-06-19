@@ -134,7 +134,7 @@ const UserRank = () => {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 overflow-x-hidden">
       {/* Header Section */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 p-8 text-white">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -148,7 +148,7 @@ const UserRank = () => {
       </div>
 
       {/* Current Rank Overview */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 w-full min-w-0">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5"></div>
         <div className="relative p-8">
           <div className="text-center">
@@ -174,7 +174,7 @@ const UserRank = () => {
       </div>
 
       {/* Rank Requirements */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 w-full min-w-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -188,7 +188,7 @@ const UserRank = () => {
               const isCompleted = achieved >= required;
               
               return (
-                <div key={requirement} className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-gray-200/50">
+                <div key={requirement} className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-gray-200/50 w-full min-w-0">
                   <div className="flex justify-between items-center mb-3">
                     <h3 className="text-lg font-semibold text-gray-700 capitalize">
                       {requirement.replace(/([A-Z])/g, ' $1').trim()}
@@ -220,7 +220,7 @@ const UserRank = () => {
       </div>
 
       {/* Current Rank Benefits */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 w-full min-w-0">
         <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -229,7 +229,7 @@ const UserRank = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {rankData.rankBenefits.map((benefit, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 p-4 border border-green-200/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 p-4 border border-green-200/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full min-w-0">
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
                     <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -245,7 +245,7 @@ const UserRank = () => {
       </div>
 
       {/* Rank Hierarchy */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 w-full min-w-0">
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-orange-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -266,7 +266,7 @@ const UserRank = () => {
                       : isAchieved 
                         ? 'border-green-300 bg-gradient-to-r from-green-50 to-emerald-50 hover:shadow-md' 
                         : 'border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100'
-                  }`}
+                  } w-full min-w-0`}
                 >
                   <div className={`text-2xl mb-2 text-center transition-transform duration-300 group-hover:scale-110 ${
                     isCurrentRank ? 'text-purple-600' : isAchieved ? 'text-green-600' : 'text-gray-400'
@@ -289,7 +289,7 @@ const UserRank = () => {
       </div>
 
       {/* Next Rank Preview */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 w-full min-w-0">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -307,7 +307,7 @@ const UserRank = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(rankBenefits[rankData.nextRank] || []).map((benefit, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-xl bg-white p-4 border border-indigo-200/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div key={index} className="group relative overflow-hidden rounded-xl bg-white p-4 border border-indigo-200/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full min-w-0">
                   <div className="flex items-center">
                     <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
