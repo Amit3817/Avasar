@@ -148,7 +148,7 @@ const UserRank = () => {
       </div>
 
       {/* Current Rank Overview */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5"></div>
         <div className="relative p-8">
           <div className="text-center">
@@ -174,7 +174,7 @@ const UserRank = () => {
       </div>
 
       {/* Rank Requirements */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -220,7 +220,7 @@ const UserRank = () => {
       </div>
 
       {/* Current Rank Benefits */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
         <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -245,7 +245,7 @@ const UserRank = () => {
       </div>
 
       {/* Rank Hierarchy */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-orange-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -289,7 +289,7 @@ const UserRank = () => {
       </div>
 
       {/* Next Rank Preview */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">

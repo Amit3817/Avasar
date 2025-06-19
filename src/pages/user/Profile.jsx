@@ -108,7 +108,7 @@ const UserProfile = () => {
             </div>
             <button
               onClick={() => setIsEditing(!isEditing)}
-              className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 backdrop-blur-sm border border-white border-opacity-30"
+              className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 border border-white border-opacity-30"
             >
               {isEditing ? 'Cancel' : 'Edit Profile'}
             </button>
@@ -261,7 +261,7 @@ const UserProfile = () => {
                   <button
                     onClick={handlePhotoUpload}
                     disabled={loading}
-                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:transform-none"
+                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:transform-none"
                   >
                     {loading ? (
                       <div className="flex items-center justify-center">

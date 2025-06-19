@@ -101,7 +101,7 @@ const UserTeam = () => {
 
       {/* Team Statistics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10"></div>
           <div className="relative p-6">
             <div className="flex items-center justify-between">
@@ -117,7 +117,7 @@ const UserTeam = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
           <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10"></div>
           <div className="relative p-6">
             <div className="flex items-center justify-between">
@@ -133,7 +133,7 @@ const UserTeam = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10"></div>
           <div className="relative p-6">
             <div className="flex items-center justify-between">
@@ -149,7 +149,7 @@ const UserTeam = () => {
           </div>
         </div>
 
-        <div className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+        <div className="group relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10"></div>
           <div className="relative p-6">
             <div className="flex items-center justify-between">
@@ -167,7 +167,7 @@ const UserTeam = () => {
       </div>
 
       {/* Direct Referrals */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -269,7 +269,7 @@ const UserTeam = () => {
       </div>
 
       {/* Team Structure */}
-      <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+      <div className="relative overflow-hidden rounded-2xl bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
         <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5"></div>
         <div className="relative p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
