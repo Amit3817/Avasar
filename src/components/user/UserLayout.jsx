@@ -53,10 +53,8 @@ const UserLayout = () => {
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between h-20 px-6 border-b border-gray-200/60">
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-blue-500 rounded-2xl flex items-center justify-center mr-3 shadow-lg">
-                    <h1 className="text-lg font-bold text-white">A</h1>
-                  </div>
-                  <h1 className="text-xl font-bold bg-gradient-to-r from-primary-500 to-blue-500 bg-clip-text text-transparent">Avasar</h1>
+                  <img src="/logo.png" alt="Avasar Logo" className="w-24 h-10 mr-3 shadow-lg" />
+                  <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-primary-500 to-blue-500 bg-clip-text text-transparent">Avasar</h1>
                 </div>
                 <button
                   onClick={() => setSidebarOpen(false)}
@@ -69,42 +67,85 @@ const UserLayout = () => {
                 </button>
               </div>
               {/* Sidebar content and nav links */}
-              <div className="flex-1 flex flex-col justify-between overflow-y-auto px-6 py-6 space-y-2 bg-white/80">
+              <div className="flex-1 flex flex-col justify-start overflow-y-auto px-6 py-6 space-y-2 bg-white/80">
                 <div>
                   {/* Navigation Links */}
                   {navItems.map((item) => (
                     <Link
                       key={item.name}
                       to={item.path}
-                      className={`group flex items-center px-4 py-3 rounded-2xl text-base font-bold transition-all duration-300 w-full ${
+                      className={`group flex items-center px-4 py-3 rounded-2xl text-sm md:text-base font-bold transition-all duration-300 w-full ${
                         location.pathname === item.path
                           ? 'bg-gradient-to-r from-primary-500 to-blue-500 text-white shadow-lg'
                           : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100/80'
                       }`}
                       onClick={() => setSidebarOpen(false)}
                     >
-                      <span className="relative z-10 mr-4 text-xl">{item.icon}</span>
+                      <span className="relative z-10 mr-4 text-lg md:text-xl">{item.icon}</span>
                       <span className="relative z-10">{item.name}</span>
                     </Link>
                   ))}
                 </div>
-                {/* Logout Button at bottom */}
-                <div className="pb-2">
-                  <button
-                    onClick={handleLogout}
-                    className="group relative overflow-hidden w-full text-left px-4 py-3 rounded-2xl text-base font-bold text-red-500 hover:bg-red-50 transition-all duration-300"
-                  >
-                    <span className="flex items-center">
-                      <span className="mr-2">🚪</span>
-                      Logout
-                    </span>
-                  </button>
-                </div>
+              </div>
+              {/* Logout Button pinned to bottom */}
+              <div className="px-6 pb-4 pt-2 bg-white/80 border-t border-gray-200/60">
+                <button
+                  onClick={handleLogout}
+                  className="group relative overflow-hidden w-full text-left px-4 py-3 rounded-2xl text-sm md:text-base font-bold text-red-500 hover:bg-red-50 transition-all duration-300"
+                >
+                  <span className="flex items-center">
+                    <span className="mr-2">🚪</span>
+                    Logout
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </>
       )}
+      {/* Persistent Sidebar for md+ screens */}
+      <div className="hidden md:flex fixed top-0 left-0 z-[999] w-72 h-screen max-w-full bg-white/80 rounded-r-3xl shadow-2xl flex-col border-none overflow-hidden backdrop-blur-xl" style={{ boxShadow: '0 8px 32px 0 rgba(31,38,135,0.15)', border: 'none' }}>
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between h-20 px-6 border-b border-gray-200/60">
+            <div className="flex items-center">
+              <img src="/logo.png" alt="Avasar Logo" className="w-24 h-10 mr-3 shadow-lg" />
+              <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-primary-500 to-blue-500 bg-clip-text text-transparent">Avasar</h1>
+            </div>
+          </div>
+          {/* Sidebar content and nav links */}
+          <div className="flex-1 flex flex-col justify-between overflow-y-auto px-6 py-6 space-y-2 bg-white/80">
+            <div>
+              {/* Navigation Links */}
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`group flex items-center px-4 py-3 rounded-2xl text-sm md:text-base font-bold transition-all duration-300 w-full ${
+                    location.pathname === item.path
+                      ? 'bg-gradient-to-r from-primary-500 to-blue-500 text-white shadow-lg'
+                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100/80'
+                  }`}
+                >
+                  <span className="relative z-10 mr-4 text-lg md:text-xl">{item.icon}</span>
+                  <span className="relative z-10">{item.name}</span>
+                </Link>
+              ))}
+            </div>
+            {/* Logout Button at bottom */}
+            <div className="pb-2">
+              <button
+                onClick={handleLogout}
+                className="group relative overflow-hidden w-full text-left px-4 py-3 rounded-2xl text-sm md:text-base font-bold text-red-500 hover:bg-red-50 transition-all duration-300"
+              >
+                <span className="flex items-center">
+                  <span className="mr-2">🚪</span>
+                  Logout
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Main layout */}
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 flex w-full max-w-full overflow-x-hidden">
         {/* Main content */}

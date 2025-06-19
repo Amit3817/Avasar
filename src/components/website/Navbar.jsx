@@ -48,9 +48,7 @@ const Navbar = () => {
           >
             <div className="flex items-center justify-between h-20 px-6 border-b border-gray-200/60">
               <div className="flex items-center">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-blue-500 rounded-2xl flex items-center justify-center mr-3 shadow-lg">
-                  <h1 className="text-lg font-bold text-white">A</h1>
-                </div>
+                <img src="/logo.png" alt="Avasar Logo" className="w-24 h-10 mr-3 shadow-lg" />
                 <h1 className="text-xl font-bold bg-gradient-to-r from-primary-500 to-blue-500 bg-clip-text text-transparent">Avasar</h1>
               </div>
               <button
@@ -122,9 +120,7 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 flex items-center group">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-blue-600 rounded-2xl flex items-center justify-center mr-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <h1 className="text-lg font-bold text-white">A</h1>
-                </div>
+                <img src="/logo.png" alt="Avasar Logo" className="w-24 h-10 mr-3 shadow-lg group-hover:scale-110 transition-transform duration-300" />
                 <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">
                   Avasar
                 </h1>

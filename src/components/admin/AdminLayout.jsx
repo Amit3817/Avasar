@@ -50,9 +50,7 @@ const AdminLayout = () => {
           >
             <div className="flex items-center justify-between h-20 px-6 border-b border-gray-200/60">
               <div className="flex items-center">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-blue-500 rounded-2xl flex items-center justify-center mr-3 shadow-lg">
-                  <h1 className="text-lg font-bold text-white">A</h1>
-                </div>
+                <img src="/logo.png" alt="Avasar Logo" className="w-24 h-10 mr-3 shadow-lg" />
                 <h1 className="text-xl font-bold bg-gradient-to-r from-primary-500 to-blue-500 bg-clip-text text-transparent">Admin Panel</h1>
               </div>
               <button
@@ -104,9 +102,7 @@ const AdminLayout = () => {
       <div className={`hidden md:flex flex-col h-screen w-80 bg-white/80 rounded-tr-3xl rounded-br-3xl shadow-2xl border-none overflow-hidden backdrop-blur-xl border-r border-white/20`} style={{ boxShadow: '0 8px 32px 0 rgba(31,38,135,0.15)', border: 'none' }}>
         <div className="flex items-center justify-between h-20 px-6 border-b border-gray-200/60">
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-blue-500 rounded-2xl flex items-center justify-center mr-3 shadow-lg">
-              <h1 className="text-lg font-bold text-white">A</h1>
-            </div>
+            <img src="/logo.png" alt="Avasar Logo" className="w-24 h-10 mr-3 shadow-lg" />
             <h1 className="text-xl font-bold bg-gradient-to-r from-primary-500 to-blue-500 bg-clip-text text-transparent">Admin Panel</h1>
           </div>
         </div>

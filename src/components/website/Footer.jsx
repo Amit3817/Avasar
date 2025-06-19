@@ -13,9 +13,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-blue-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                <h3 className="text-xl font-bold text-white">A</h3>
-              </div>
+              <img src="/logo.png" alt="Avasar Logo" className="w-24 h-10 mr-4 shadow-lg" />
               <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary-400 to-blue-400 bg-clip-text text-transparent">
                 Avasar
               </h3>
