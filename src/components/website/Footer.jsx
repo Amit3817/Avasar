@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
+import { FaFacebook, FaWhatsapp, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
+  // Add scrollToTop handler
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white w-full">
       <div className="absolute inset-0 bg-black/20"></div>
@@ -25,17 +29,17 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="flex items-center space-x-4 mt-8">
-              <a href="#" className="group relative overflow-hidden w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
-                <span className="text-white text-lg">📘</span>
+              <a href="https://facebook.com/avasar" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+                <FaFacebook className="text-white text-2xl" />
               </a>
-              <a href="#" className="group relative overflow-hidden w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
-                <span className="text-white text-lg">📱</span>
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+                <FaWhatsapp className="text-white text-2xl" />
               </a>
-              <a href="#" className="group relative overflow-hidden w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
-                <span className="text-white text-lg">🐦</span>
+              <a href="https://twitter.com/avasar" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+                <FaTwitter className="text-white text-2xl" />
               </a>
-              <a href="#" className="group relative overflow-hidden w-12 h-12 bg-gradient-to-r from-red-500 to-rose-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
-                <span className="text-white text-lg">📷</span>
+              <a href="https://instagram.com/avasar" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden w-12 h-12 bg-gradient-to-r from-red-500 to-rose-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+                <FaInstagram className="text-white text-2xl" />
               </a>
             </div>
           </div>
@@ -48,43 +52,43 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
+                <Link to="/" onClick={scrollToTop} className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
                   <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
+                <Link to="/about" onClick={scrollToTop} className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
                   <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/plan" className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
+                <Link to="/plan" onClick={scrollToTop} className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
                   <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   Plan
                 </Link>
               </li>
               <li>
-                <Link to="/rewards" className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
+                <Link to="/rewards" onClick={scrollToTop} className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
                   <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   Rewards
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
+                <Link to="/contact" onClick={scrollToTop} className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
                   <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   Contact
                 </Link>
               </li>
               <li>
-                <Link to="/login" className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
+                <Link to="/login" onClick={scrollToTop} className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
                   <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   Login
                 </Link>
               </li>
               <li>
-                <Link to="/register" className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
+                <Link to="/register" onClick={scrollToTop} className="group flex items-center text-gray-300 hover:text-primary-400 transition-all duration-300 text-base">
                   <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   Register
                 </Link>
@@ -150,9 +154,9 @@ const Footer = () => {
               © {new Date().getFullYear()} Avasar. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">Cookie Policy</a>
+              <Link to="#" onClick={scrollToTop} className="text-gray-400 hover:text-primary-400 transition-colors text-sm">Privacy Policy</Link>
+              <Link to="#" onClick={scrollToTop} className="text-gray-400 hover:text-primary-400 transition-colors text-sm">Terms of Service</Link>
+              <Link to="#" onClick={scrollToTop} className="text-gray-400 hover:text-primary-400 transition-colors text-sm">Cookie Policy</Link>
             </div>
           </div>
         </div>

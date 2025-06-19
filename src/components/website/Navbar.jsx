@@ -60,16 +60,12 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
             {user ? (
               <div className="flex items-center space-x-3 lg:space-x-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-sm">
-                      {user.firstName?.[0]}{user.lastName?.[0]}
-                    </span>
-                  </div>
-                  <span className="text-sm text-gray-700 font-medium hidden lg:block">
-                    Welcome, {user.firstName}
-                  </span>
-                </div>
+                <Link
+                  to="/user/dashboard"
+                  className="text-sm text-gray-700 font-medium hidden lg:block bg-gradient-to-r from-primary-600 to-blue-600 text-white px-4 py-2 rounded-2xl shadow-md hover:scale-105 transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                >
+                  Welcome, {user.firstName}
+                </Link>
                 <button
                   onClick={handleLogout}
                   className="group relative overflow-hidden bg-transparent border-2 border-red-500 text-red-600 font-bold py-2 px-4 rounded-2xl transition-all duration-300 hover:bg-red-500 hover:text-white hover:shadow-lg"
@@ -151,17 +147,13 @@ const Navbar = () => {
             
             {user ? (
               <div className="pt-4 pb-3 border-t border-gray-200/50 space-y-3">
-                <div className="flex items-center space-x-3 px-4 py-2">
-                  <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-sm">
-                      {user.firstName?.[0]}{user.lastName?.[0]}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-gray-900">Welcome, {user.firstName}</div>
-                    <div className="text-xs text-gray-600">{user.email}</div>
-                  </div>
-                </div>
+                <Link
+                  to="/user/dashboard"
+                  className="text-sm font-bold text-white bg-gradient-to-r from-primary-600 to-blue-600 px-4 py-2 rounded-2xl shadow-md hover:scale-105 transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Welcome, {user.firstName}
+                </Link>
                 <button
                   onClick={() => {
                     handleLogout();

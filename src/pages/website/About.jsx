@@ -46,6 +46,80 @@ const About = () => (
         ))}
       </div>
     </section>
+
+    {/* Vision Section - Zig-zag (text left, icon right) */}
+    <section className="py-16 bg-gradient-to-r from-white to-blue-50">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div className="flex-1">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-700">Our Vision</h2>
+          <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
+            <li>Empower individuals for financial freedom</li>
+            <li>Build a trusted, transparent community</li>
+            <li>Grow through innovation and teamwork</li>
+          </ul>
+        </div>
+        <div className="flex-1 flex justify-center">
+          <div className="w-32 h-32 bg-gradient-to-r from-primary-500 to-blue-500 rounded-full flex items-center justify-center text-white text-5xl shadow-lg">
+            <span>🌟</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Team Section - Zig-zag (icon left, text right) */}
+    <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10">
+        <div className="flex-1">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-700">Meet Our Team</h2>
+          <ul className="list-disc list-inside text-lg text-gray-700 space-y-2 mb-6">
+            <li>Passionate leadership</li>
+            <li>Dedicated to your success</li>
+            <li>Always here to support you</li>
+          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-xl shadow-md p-6 text-center flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-blue-500 flex items-center justify-center text-white text-2xl font-bold mb-2">S</div>
+              <div className="font-bold text-lg text-primary-700 mb-1">Sneha Kapoor</div>
+              <div className="text-gray-600 text-sm">COO</div>
+            </div>
+            <div className="bg-white rounded-xl shadow-md p-6 text-center flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-blue-500 flex items-center justify-center text-white text-2xl font-bold mb-2">R</div>
+              <div className="font-bold text-lg text-primary-700 mb-1">Rahul Mehra</div>
+              <div className="text-gray-600 text-sm">CTO</div>
+            </div>
+            <div className="bg-white rounded-xl shadow-md p-6 text-center flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-blue-500 flex items-center justify-center text-white text-2xl font-bold mb-2">D</div>
+              <div className="font-bold text-lg text-primary-700 mb-1">Diya Mourya</div>
+              <div className="text-gray-600 text-sm">COO & Founder</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex-1 flex justify-center mb-8 md:mb-0">
+          <div className="w-32 h-32 bg-gradient-to-r from-primary-500 to-blue-500 rounded-full flex items-center justify-center text-white text-5xl shadow-lg">
+            <span>🤝</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Values Section - Zig-zag (text left, icon right) */}
+    <section className="py-16 bg-gradient-to-r from-white to-blue-50">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div className="flex-1">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-700">Our Values</h2>
+          <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
+            <li><span className="font-bold text-primary-700">Trust:</span> Integrity & transparency</li>
+            <li><span className="font-bold text-primary-700">Teamwork:</span> Growing together</li>
+            <li><span className="font-bold text-primary-700">Innovation:</span> Embracing new ideas</li>
+          </ul>
+        </div>
+        <div className="flex-1 flex justify-center">
+          <div className="w-32 h-32 bg-gradient-to-r from-primary-500 to-blue-500 rounded-full flex items-center justify-center text-white text-5xl shadow-lg">
+            <span>💡</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 );
 

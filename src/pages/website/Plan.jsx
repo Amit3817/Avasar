@@ -15,14 +15,24 @@ const Plan = () => (
     </section>
 
     {/* Plan Details Section */}
-    <section className="py-16 bg-white">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary-700">What You Get</h2>
-      <ul className="list-disc list-inside text-gray-700 max-w-2xl mx-auto text-lg space-y-2 mb-8">
-        <li>Activation of your Avasar account</li>
-        <li>Investment in live trading pool</li>
-        <li>Eligibility to earn referral commissions</li>
-        <li>Access to a 10-level income system</li>
-      </ul>
+    <section className="py-16 bg-gradient-to-r from-white to-blue-50">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div className="flex-1">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-700">What You Get</h2>
+          <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
+            <li>Account activation</li>
+            <li>Live trading pool access</li>
+            <li>Referral commissions</li>
+            <li>10-level income system</li>
+          </ul>
+        </div>
+        <div className="flex-1 grid grid-cols-1 gap-6">
+          <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Secure Account</div>
+          <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Live Trading Pool</div>
+          <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Referral Commissions</div>
+          <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">10-Level Income</div>
+        </div>
+      </div>
     </section>
 
     {/* Commission Section */}
@@ -60,6 +70,80 @@ const Plan = () => (
           <li>Level 3 to 10: 1% per level</li>
         </ul>
       </div>
+    </section>
+
+    {/* Comparison Table Section */}
+    <section className="py-20 bg-gradient-to-r from-white to-blue-50">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary-700">Why Choose Avasar?</h2>
+      <ul className="list-disc list-inside text-lg text-gray-700 space-y-2 text-center mb-8 max-w-2xl mx-auto">
+        <li>Transparent income</li>
+        <li>Live trading pool</li>
+        <li>Multiple income streams</li>
+        <li>Reward system</li>
+      </ul>
+      <div className="overflow-x-auto max-w-4xl mx-auto">
+        <table className="min-w-full bg-white rounded-2xl shadow-xl">
+          <thead>
+            <tr className="bg-gradient-to-r from-primary-100 to-blue-100">
+              <th className="py-3 px-4 text-left font-bold text-primary-700">Feature</th>
+              <th className="py-3 px-4 text-left font-bold text-primary-700">Avasar</th>
+              <th className="py-3 px-4 text-left font-bold text-primary-700">Others</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b last:border-b-0">
+              <td className="py-2 px-4 font-semibold text-gray-700">Transparent Income</td>
+              <td className="py-2 px-4 text-primary-600">✔️</td>
+              <td className="py-2 px-4 text-gray-600">❌</td>
+            </tr>
+            <tr className="border-b last:border-b-0">
+              <td className="py-2 px-4 font-semibold text-gray-700">Live Trading Pool</td>
+              <td className="py-2 px-4 text-primary-600">✔️</td>
+              <td className="py-2 px-4 text-gray-600">❌</td>
+            </tr>
+            <tr className="border-b last:border-b-0">
+              <td className="py-2 px-4 font-semibold text-gray-700">Multiple Income Streams</td>
+              <td className="py-2 px-4 text-primary-600">✔️</td>
+              <td className="py-2 px-4 text-gray-600">❌</td>
+            </tr>
+            <tr className="border-b last:border-b-0">
+              <td className="py-2 px-4 font-semibold text-gray-700">Reward System</td>
+              <td className="py-2 px-4 text-primary-600">✔️</td>
+              <td className="py-2 px-4 text-gray-600">❌</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    {/* Plan Benefits Section */}
+    <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10">
+        <div className="flex-1 grid grid-cols-1 gap-6">
+          <div className="bg-white rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Low entry barrier</div>
+          <div className="bg-white rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Lifetime access</div>
+          <div className="bg-white rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Dedicated support</div>
+          <div className="bg-white rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Training & webinars</div>
+          <div className="bg-white rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Exclusive rewards</div>
+        </div>
+        <div className="flex-1">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-700">Plan Benefits</h2>
+          <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
+            <li>Low entry barrier for everyone</li>
+            <li>Lifetime access to platform features</li>
+            <li>Dedicated support team</li>
+            <li>Regular training and webinars</li>
+            <li>Exclusive rewards and bonuses</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* Call-to-Action Section */}
+    <section className="py-20 bg-gradient-to-r from-primary-600 to-blue-600 text-white text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Join the Best Plan?</h2>
+      <p className="text-lg mb-8">Take the first step towards financial freedom with Avasar.</p>
+      <a href="/register" className="inline-block bg-white text-primary-700 font-bold py-4 px-12 rounded-full shadow-xl hover:scale-105 transition-transform text-lg">Register Now</a>
     </section>
   </div>
 );
