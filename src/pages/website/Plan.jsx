@@ -16,7 +16,7 @@ const Plan = () => (
 
     {/* Plan Details Section */}
     <section className="py-16 bg-gradient-to-r from-white to-blue-50">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 px-2 sm:px-4">
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-700">What You Get</h2>
           <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
@@ -37,8 +37,8 @@ const Plan = () => (
 
     {/* Commission Section */}
     <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-100">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary-700">Team Commission from ₹3600</h2>
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto px-2 sm:px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary-700">Team Commission from ₹3600</h2>
         <ul className="list-disc list-inside text-gray-700 text-lg mb-8">
           <li>Level 1 (Direct): 10%</li>
           <li>Level 2: 3%</li>
@@ -49,8 +49,8 @@ const Plan = () => (
 
     {/* ROI Example Section */}
     <section className="py-20 bg-white">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary-700">Monthly ROI Example</h2>
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto px-2 sm:px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary-700">Monthly ROI Example</h2>
         <p className="text-gray-700 text-lg mb-2">Invest <span className="font-bold">₹1,00,000</span> and earn <span className="font-bold">₹4,000/month</span> for 24 months (4% monthly ROI).</p>
         <ul className="list-disc list-inside text-gray-700 text-lg">
           <li>Level 1: 10% of investor's monthly return</li>
@@ -62,8 +62,8 @@ const Plan = () => (
 
     {/* One-Time Commission Section */}
     <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-100">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary-700">Team Commission on Investment (One-Time)</h2>
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto px-2 sm:px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary-700">Team Commission on Investment (One-Time)</h2>
         <ul className="list-disc list-inside text-gray-700 text-lg">
           <li>Level 1: 3% of investment amount</li>
           <li>Level 2: 2%</li>
@@ -74,15 +74,14 @@ const Plan = () => (
 
     {/* Comparison Table Section */}
     <section className="py-20 bg-gradient-to-r from-white to-blue-50">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary-700">Why Choose Avasar?</h2>
-      <ul className="list-disc list-inside text-lg text-gray-700 space-y-2 text-center mb-8 max-w-2xl mx-auto">
+      <ul className="list-disc list-inside text-lg text-gray-700 space-y-2 text-center mb-8 max-w-2xl mx-auto px-2 sm:px-4">
         <li>Transparent income</li>
         <li>Live trading pool</li>
         <li>Multiple income streams</li>
         <li>Reward system</li>
       </ul>
-      <div className="overflow-x-auto max-w-4xl mx-auto">
-        <table className="min-w-full bg-white rounded-2xl shadow-xl">
+      <div className="overflow-x-auto max-w-4xl mx-auto px-2 sm:px-0">
+        <table className="min-w-full bg-white rounded-2xl shadow-xl text-sm sm:text-base">
           <thead>
             <tr className="bg-gradient-to-r from-primary-100 to-blue-100">
               <th className="py-3 px-4 text-left font-bold text-primary-700">Feature</th>
@@ -118,7 +117,7 @@ const Plan = () => (
 
     {/* Plan Benefits Section */}
     <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10 px-2 sm:px-4">
         <div className="flex-1 grid grid-cols-1 gap-6">
           <div className="bg-white rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Low entry barrier</div>
           <div className="bg-white rounded-xl shadow-md p-8 text-center font-semibold text-primary-700">Lifetime access</div>
@@ -140,10 +139,10 @@ const Plan = () => (
     </section>
 
     {/* Call-to-Action Section */}
-    <section className="py-20 bg-gradient-to-r from-primary-600 to-blue-600 text-white text-center">
+    <section className="py-20 bg-gradient-to-r from-primary-600 to-blue-600 text-white text-center px-2 sm:px-4">
       <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Join the Best Plan?</h2>
       <p className="text-lg mb-8">Take the first step towards financial freedom with Avasar.</p>
-      <a href="/register" className="inline-block bg-white text-primary-700 font-bold py-4 px-12 rounded-full shadow-xl hover:scale-105 transition-transform text-lg">Register Now</a>
+      <a href="/register" className="inline-block bg-white text-primary-700 font-bold py-4 px-8 sm:px-12 rounded-full shadow-xl hover:scale-105 transition-transform text-lg">Register Now</a>
     </section>
   </div>
 );

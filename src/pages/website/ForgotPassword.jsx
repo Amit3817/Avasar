@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 
+axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
@@ -63,8 +65,8 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-2 sm:px-0">
+      <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Forgot Password</h2>
         {resetMessage && (
           <div className={`mb-4 p-3 rounded-xl text-center ${resetMessage.includes('success') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>{resetMessage}</div>

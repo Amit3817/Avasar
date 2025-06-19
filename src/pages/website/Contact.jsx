@@ -33,8 +33,8 @@ const Contact = () => {
 
       {/* Contact Form Section - Card style */}
       <section className="py-20 bg-white">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-2xl shadow-xl p-10">
+        <div className="max-w-2xl mx-auto px-2 sm:px-4">
+          <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-2xl shadow-xl p-6 sm:p-10">
             {submitted ? (
               <div className="text-green-600 text-center font-bold text-xl">Thank you for contacting us!</div>
             ) : (
@@ -65,7 +65,7 @@ const Contact = () => {
       {/* Map Section */}
       <section className="py-16 bg-gradient-to-r from-blue-100 to-indigo-100">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary-700">Our Location</h2>
-        <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-xl">
+        <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-xl px-2 sm:px-0">
           <iframe
             title="Avasar Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.8178888888886!2d75.8577!3d26.9124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDU0JzQ0LjciTiA3NcKwNTEnMjcuOCJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
@@ -88,7 +88,7 @@ const Contact = () => {
 
       {/* Team Contact Section - Improved card styling, three centered cards */}
       <section className="py-16 bg-gradient-to-r from-blue-100 to-indigo-100">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
+        <div className="max-w-4xl mx-auto flex flex-col items-center px-2 sm:px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary-700 text-center">Contact Our Team</h2>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full">
             <div className="flex-1 max-w-xs bg-white rounded-2xl shadow-xl p-8 text-center border-t-4 border-primary-500 flex flex-col items-center min-h-[260px]">
@@ -122,7 +122,7 @@ const Contact = () => {
       {/* FAQ Section - Use single-column grid */}
       <section className="py-16 bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary-700">FAQs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-2 sm:px-4">
           <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-xl shadow-md p-6">
             <h3 className="font-bold text-lg text-primary-700 mb-2">How can I reach support?</h3>
             <p className="text-gray-700">Contact us via the form or email. We respond within 24 hours on business days.</p>

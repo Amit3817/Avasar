@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import LoadingSpinner from '../../components/LoadingSpinner';
+import axios from 'axios';
+
+axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -139,7 +142,7 @@ const Login = () => {
   return (
     <>
       {loading && <LoadingSpinner fullScreen text="Processing..." />}
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 px-2 sm:px-0">
         {/* Hero Section */}
         <section className="py-20 px-4 text-center bg-gradient-to-r from-primary-700 via-blue-700 to-indigo-700 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-600/60 to-blue-600/60 opacity-80 z-0"></div>
@@ -160,7 +163,7 @@ const Login = () => {
 
         {/* Login Form Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-md mx-auto">
+          <div className="max-w-md mx-auto px-2 sm:px-0">
             <form className="space-y-6" onSubmit={handleSubmit}>
               {error && (
                 <div className="bg-gradient-to-r from-red-500/10 to-rose-500/10 border border-red-200 text-red-700 px-6 py-4 rounded-2xl mb-4">

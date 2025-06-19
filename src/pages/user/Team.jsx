@@ -4,6 +4,8 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
+
 const UserTeam = () => {
   const { user } = useAuth();
   const [teamData, setTeamData] = useState({

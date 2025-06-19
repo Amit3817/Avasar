@@ -5,6 +5,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
+
 const UserProfile = () => {
   const { user, updateUser } = useAuth();
   const [isEditing, setIsEditing] = useState(false);

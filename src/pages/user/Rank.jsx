@@ -3,6 +3,8 @@ import { useAuth } from '../../context/AuthContext';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import axios from 'axios';
 
+axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
+
 const UserRank = () => {
   const { user } = useAuth();
   const [rankData, setRankData] = useState({

@@ -33,13 +33,13 @@ const Rewards = () => (
     {/* Ranks Table Section */}
     <section className="py-20 bg-white">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary-700">Rank & Rewards Table</h2>
-      <ul className="list-disc list-inside text-lg text-gray-700 space-y-2 text-center mb-8 max-w-2xl mx-auto">
+      <ul className="list-disc list-inside text-lg text-gray-700 space-y-2 text-center mb-8 max-w-2xl mx-auto px-2 sm:px-4">
         <li>Climb the ranks and unlock rewards</li>
         <li>Bonuses for every achievement</li>
         <li>Recognition for your growth</li>
       </ul>
-      <div className="overflow-x-auto max-w-4xl mx-auto">
-        <table className="min-w-full bg-white rounded-2xl shadow-xl">
+      <div className="overflow-x-auto max-w-4xl mx-auto px-2 sm:px-0">
+        <table className="min-w-full bg-white rounded-2xl shadow-xl text-sm sm:text-base">
           <thead>
             <tr className="bg-gradient-to-r from-primary-100 to-blue-100">
               <th className="py-3 px-4 text-left font-bold text-primary-700">Rank</th>
@@ -70,8 +70,8 @@ const Rewards = () => (
 
     {/* Success Stories Section */}
     <section className="py-20 bg-gradient-to-r from-blue-100 to-indigo-100">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10">
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10 px-2 sm:px-4">
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
           <div className="bg-white rounded-2xl shadow-xl p-8 text-center border-t-4 border-primary-500">
             <p className="text-lg text-gray-700 mb-4">“I reached the Manager rank in just 6 months and earned my first big reward!”</p>
             <div className="font-bold text-primary-700">- Priya S.</div>
@@ -89,7 +89,7 @@ const Rewards = () => (
             <div className="font-bold text-primary-700">- Diya Mourya</div>
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 w-full mt-8 md:mt-0">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-700">Success Stories</h2>
           <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
             <li>Real people, real rewards</li>
@@ -101,10 +101,10 @@ const Rewards = () => (
     </section>
 
     {/* Call-to-Action Section */}
-    <section className="py-20 bg-gradient-to-r from-primary-600 to-blue-600 text-white text-center">
+    <section className="py-20 bg-gradient-to-r from-primary-600 to-blue-600 text-white text-center px-2 sm:px-4">
       <h2 className="text-3xl md:text-4xl font-bold mb-6">Start Your Success Story</h2>
       <p className="text-lg mb-8">Join Avasar and unlock a world of rewards and recognition.</p>
-      <a href="/register" className="inline-block bg-white text-primary-700 font-bold py-4 px-12 rounded-full shadow-xl hover:scale-105 transition-transform text-lg">Join Now</a>
+      <a href="/register" className="inline-block bg-white text-primary-700 font-bold py-4 px-8 sm:px-12 rounded-full shadow-xl hover:scale-105 transition-transform text-lg">Join Now</a>
     </section>
   </div>
 );

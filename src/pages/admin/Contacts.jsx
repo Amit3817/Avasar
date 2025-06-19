@@ -1,3 +1,6 @@
+import axios from 'axios';
+axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
+
 const AdminContacts = () => {
   const contacts = [
     { id: 1, name: 'John Doe', email: 'john@example.com', phone: '+91 98765 43210', subject: 'Investment Inquiry', message: 'I would like to know more about your investment opportunities.', status: 'new', date: '2024-02-15 10:30 AM' },

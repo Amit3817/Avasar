@@ -38,7 +38,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import LoadingSpinner from './components/LoadingSpinner';
 
 // API Configuration
-axios.defaults.baseURL = 'http://localhost:5000/api';
+axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
 function AuthRedirect({ children }) {
   const { user, loading } = useAuth();

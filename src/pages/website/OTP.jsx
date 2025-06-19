@@ -4,6 +4,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
+axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
+
 const RESEND_COOLDOWN = 30; // seconds
 
 const OTP = () => {
@@ -101,7 +103,7 @@ const OTP = () => {
   return (
     <>
       {loading && <LoadingSpinner fullScreen text="Processing..." />}
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 px-2 sm:px-0">
         {/* Hero Section */}
         <section className="py-20 px-4 text-center bg-gradient-to-r from-primary-700 via-blue-700 to-indigo-700 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-600/60 to-blue-600/60 opacity-80 z-0"></div>
@@ -116,7 +118,7 @@ const OTP = () => {
 
         {/* OTP Form Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-md mx-auto">
+          <div className="max-w-md mx-auto px-2 sm:px-0">
             {message && (
               <div className={`mb-4 p-3 rounded-xl text-center ${message.includes('success') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>{message}</div>
             )}

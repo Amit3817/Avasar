@@ -4,6 +4,8 @@ import { useAuth } from '../../context/AuthContext';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import axios from 'axios';
 
+axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api`;
+
 const Register = () => {
   const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState({
